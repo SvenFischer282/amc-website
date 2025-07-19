@@ -41,10 +41,16 @@ export function Visit() {
                 <p className="text-coffee-medium mb-4">
                   052 01 Spišská Nová Ves, Slovensko
                 </p>
-                <Button variant="coffee" size="sm" className="group">
-                  Navigovať
-                  <Navigation className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                </Button>
+                <a 
+                  href="https://maps.google.com/?q=Ing.+Straku+9003,+Spišská+Nová+Ves" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  <Button variant="coffee" size="sm" className="group">
+                    Navigovať
+                    <Navigation className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </a>
               </CardContent>
             </Card>
 
@@ -91,9 +97,11 @@ export function Visit() {
                   <Mail className="h-5 w-5 text-coffee-medium" />
                   <span className="text-coffee-dark">info@amccoffeeshop.sk</span>
                 </div>
-                <Button variant="warm" size="sm" className="w-full">
-                  Napísať email
-                </Button>
+                <a href="mailto:info@amccoffeeshop.sk">
+                  <Button variant="warm" size="sm" className="w-full">
+                    Napísať email
+                  </Button>
+                </a>
               </CardContent>
             </Card>
           </div>
@@ -108,9 +116,15 @@ export function Visit() {
                 <p className="opacity-90 mb-4">
                   Ing. Straku 9003, Spišská Nová Ves
                 </p>
-                <Button variant="hero" className="bg-white text-coffee-dark hover:bg-cream">
-                  Otvoriť v Google Maps
-                </Button>
+                <a 
+                  href="https://maps.google.com/?q=Ing.+Straku+9003,+Spišská+Nová+Ves" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  <Button variant="hero" className="bg-white text-coffee-dark hover:bg-cream">
+                    Otvoriť v Google Maps
+                  </Button>
+                </a>
               </div>
             </div>
 

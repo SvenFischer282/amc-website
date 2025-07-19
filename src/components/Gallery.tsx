@@ -70,10 +70,16 @@ export function Gallery() {
           <p className="text-coffee-medium mb-6">
             Sledujte nás na Instagrame pre najnovšie fotky, špeciálne ponuky a denné menu
           </p>
-          <Button variant="coffee" size="lg" className="group">
-            Sledovať na Instagrame
-            <ExternalLink className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-          </Button>
+          <a 
+            href="https://instagram.com/amctvojcoffeeshop" 
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            <Button variant="coffee" size="lg" className="group">
+              Sledovať na Instagrame
+              <ExternalLink className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+            </Button>
+          </a>
         </div>
 
         {/* Photo Grid */}
@@ -106,9 +112,15 @@ export function Gallery() {
             Označte nás na svojich fotkách hashtag-om #AMCcoffeeshop 
             a my ich zdieľame na našom profile!
           </p>
-          <Button variant="warm" size="lg">
-            #AMCcoffeeshop
-          </Button>
+          <a 
+            href="https://instagram.com/explore/tags/AMCcoffeeshop/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            <Button variant="warm" size="lg">
+              #AMCcoffeeshop
+            </Button>
+          </a>
         </div>
       </div>
     </section>

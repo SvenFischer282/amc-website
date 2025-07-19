@@ -37,9 +37,11 @@ export function About() {
               </div>
             </div>
 
-            <Button variant="coffee" size="lg">
-              Naše hodnoty
-            </Button>
+            <button onClick={() => document.getElementById('visit')?.scrollIntoView({ behavior: 'smooth' })}>
+              <Button variant="coffee" size="lg">
+                Naše hodnoty
+              </Button>
+            </button>
           </div>
 
           {/* Feature Cards */}

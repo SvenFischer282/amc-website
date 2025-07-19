@@ -1,5 +1,6 @@
 import { Coffee, UtensilsCrossed, Cake } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 export function Menu() {
@@ -93,12 +94,16 @@ export function Menu() {
             presne podľa vašich predstáv a chuti.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="hero" size="lg" className="bg-white text-coffee-dark hover:bg-cream">
-              Kompletné menu
-            </Button>
-            <Button variant="warm" size="lg">
-              Objednať online
-            </Button>
+            <Link to="/menu">
+              <Button variant="hero" size="lg" className="bg-white text-coffee-dark hover:bg-cream">
+                Kompletné menu
+              </Button>
+            </Link>
+            <a href="tel:+421xxxxxxxxx">
+              <Button variant="warm" size="lg">
+                Objednať online
+              </Button>
+            </a>
           </div>
         </div>
       </div>

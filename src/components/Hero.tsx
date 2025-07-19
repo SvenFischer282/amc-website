@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { MapPin, Clock, Instagram, Coffee } from "lucide-react";
+import { Link } from "react-router-dom";
 import heroImage from "@/assets/hero-coffee.jpg";
 
 export function Hero() {
@@ -29,13 +30,19 @@ export function Hero() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
-              <Button variant="hero" size="xl" className="group">
-                Preskúmajte menu
-                <Coffee className="ml-2 h-5 w-5 group-hover:rotate-12 transition-transform" />
-              </Button>
-              <Button variant="warm" size="xl">
-                Naša káva
-              </Button>
+              <Link to="/menu">
+                <Button variant="hero" size="xl" className="group">
+                  Preskúmajte menu
+                  <Coffee className="ml-2 h-5 w-5 group-hover:rotate-12 transition-transform" />
+                </Button>
+              </Link>
+              <button 
+                onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                <Button variant="warm" size="xl">
+                  Naša káva
+                </Button>
+              </button>
             </div>
 
             {/* Quick Info */}
@@ -48,21 +55,29 @@ export function Hero() {
                 </div>
               </div>
               
-              <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-4">
+              <button 
+                onClick={() => document.getElementById('visit')?.scrollIntoView({ behavior: 'smooth' })}
+                className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-4 hover:bg-white/20 transition-colors cursor-pointer"
+              >
                 <Clock className="h-5 w-5 text-primary" />
                 <div>
                   <p className="font-semibold">Pon-Pia 6:00-22:00</p>
                   <p className="text-sm opacity-80">So-Ne 8:00-22:00</p>
                 </div>
-              </div>
+              </button>
               
-              <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-4">
+              <a 
+                href="https://instagram.com/amctvojcoffeeshop" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-4 hover:bg-white/20 transition-colors"
+              >
                 <Instagram className="h-5 w-5 text-primary" />
                 <div>
                   <p className="font-semibold">@amctvojcoffeeshop</p>
                   <p className="text-sm opacity-80">Sledujte nás</p>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
         </div>
