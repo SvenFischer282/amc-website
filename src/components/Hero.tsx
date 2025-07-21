@@ -1,13 +1,14 @@
 import { Button } from "@/components/ui/button";
-import { MapPin, Clock, Instagram, Coffee } from "lucide-react";
+import { MapPin, Clock, Instagram, Coffee, Navigation } from "lucide-react";
 import { Link } from "react-router-dom";
 import heroImage from "@/assets/hero-coffee.jpg";
+import { siteConfig } from "@/config/site";
 
 export function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
-      <div 
+      <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${heroImage})` }}
       >
@@ -25,8 +26,8 @@ export function Hero() {
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed">
-              Prvá specialty coffeeshop v Spišskej Novej Vsi. Miesto, kde sa káva stretáva s priateľstvom 
-              a každé ráno začína s úsmevom.
+              Prvá specialty coffeeshop v Spišskej Novej Vsi. Miesto, kde sa
+              káva stretáva s priateľstvom a každé ráno začína s úsmevom.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
@@ -36,8 +37,12 @@ export function Hero() {
                   <Coffee className="ml-2 h-5 w-5 group-hover:rotate-12 transition-transform" />
                 </Button>
               </Link>
-              <button 
-                onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
+              <button
+                onClick={() =>
+                  document
+                    .getElementById("about")
+                    ?.scrollIntoView({ behavior: "smooth" })
+                }
               >
                 <Button variant="warm" size="xl">
                   Naša káva
@@ -47,28 +52,48 @@ export function Hero() {
 
             {/* Quick Info */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-white">
-              <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-4">
+              <a
+                href={siteConfig.contact.address.googleMapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-4 hover:bg-white/20 transition-colors group"
+              >
                 <MapPin className="h-5 w-5 text-primary" />
                 <div>
-                  <p className="font-semibold">Ing. Straku 9003</p>
-                  <p className="text-sm opacity-80">Spišská Nová Ves</p>
+                  <p className="font-semibold">
+                    {siteConfig.contact.address.street}
+                  </p>
+                  <p className="text-sm opacity-80">
+                    {siteConfig.contact.address.city}
+                  </p>
                 </div>
-              </div>
-              
-              <button 
-                onClick={() => document.getElementById('visit')?.scrollIntoView({ behavior: 'smooth' })}
+                <Navigation className="h-4 w-4 text-primary opacity-0 group-hover:opacity-100 transition-opacity" />
+              </a>
+
+              <button
+                onClick={() =>
+                  document
+                    .getElementById("visit")
+                    ?.scrollIntoView({ behavior: "smooth" })
+                }
                 className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-4 hover:bg-white/20 transition-colors cursor-pointer"
               >
                 <Clock className="h-5 w-5 text-primary" />
                 <div>
-                  <p className="font-semibold">Pon-Pia 6:00-22:00</p>
-                  <p className="text-sm opacity-80">So-Ne 8:00-22:00</p>
+                  <p className="font-semibold">
+                    Pon-Pia
+                    {" " + siteConfig.openingHours.weekdays.hours}
+                  </p>
+                  <p className="text-sm opacity-80">
+                    So-Ne
+                    {" " + siteConfig.openingHours.saturday.hours}
+                  </p>
                 </div>
               </button>
-              
-              <a 
-                href="https://instagram.com/amctvojcoffeeshop" 
-                target="_blank" 
+
+              <a
+                href="https://instagram.com/amctvojcoffeeshop"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-4 hover:bg-white/20 transition-colors"
               >

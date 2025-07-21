@@ -13,6 +13,8 @@ export const siteConfig = {
       street: "Ing. Straku 9003",
       city: "052 01 Spišská Nová Ves",
       country: "Slovakia",
+      googleMapsUrl:
+        "https://www.google.com/maps/place/AMC+Tvoj+Coffeeshop/@48.9467504,20.5594334,17z/data=!4m15!1m8!3m7!1s0x473e4f2abdc3f633:0x417fb5d0019c8364!2zSW5nLiBTdHJha3UsIDA1MiAwMSBTcGnFoXNrw6EgTm92w6EgVmVz!3b1!8m2!3d48.9467504!4d20.5620083!16s%2Fg%2F1tgfvdcj!3m5!1s0x473e4f2abb95922b:0xad6059a5ba131be2!8m2!3d48.9462837!4d20.5616138!16s%2Fg%2F11g6sr8gy1?entry=ttu&g_ep=EgoyMDI1MDcxNi4wIKXMDSoASAFQAw%3D%3D",
     },
     social: {
       instagram: {
@@ -33,7 +35,7 @@ export const siteConfig = {
     },
     saturday: {
       days: "Sobota",
-      hours: "8:00 - 22:00",
+      hours: "8:00 - 19:00",
       description: "Víkend",
     },
     sunday: {

@@ -47,13 +47,18 @@ export function Footer() {
           <div>
             <h4 className="font-bold text-lg mb-4 text-white">Kontakt</h4>
             <div className="space-y-3">
-              <div className="flex items-start gap-3">
+              <a 
+                href={siteConfig.contact.address.googleMapsUrl}
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-start gap-3 hover:text-primary transition-colors group"
+              >
                 <MapPin className="h-4 w-4 text-primary mt-1 flex-shrink-0" />
-                <div className="text-coffee-light text-sm">
+                <div className="text-coffee-light text-sm group-hover:text-primary transition-colors">
                   <p>{siteConfig.contact.address.street}</p>
                   <p>{siteConfig.contact.address.city}</p>
                 </div>
-              </div>
+              </a>
 
               <div className="flex items-center gap-3">
                 <Clock className="h-4 w-4 text-primary flex-shrink-0" />

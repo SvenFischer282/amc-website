@@ -1,12 +1,13 @@
 import { MapPin, Clock, Phone, Mail, Navigation, Coffee } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { siteConfig } from "@/config/site";
 
 export function Visit() {
   const openingHours = [
-    { day: "Pondelok - Piatok", time: "6:00 - 22:00" },
-    { day: "Sobota", time: "8:00 - 22:00" },
-    { day: "Nedeľa", time: "8:00 - 19:00" }
+    { day: siteConfig.openingHours.weekdays.days, time: siteConfig.openingHours.weekdays.hours },
+    { day: siteConfig.openingHours.saturday.days, time: siteConfig.openingHours.saturday.hours },
+    { day: siteConfig.openingHours.sunday.days, time: siteConfig.openingHours.sunday.hours }
   ];
 
   return (
@@ -36,13 +37,13 @@ export function Visit() {
               </CardHeader>
               <CardContent>
                 <p className="text-lg font-semibold text-coffee-dark mb-2">
-                  Ing. Straku 9003
+                  {siteConfig.contact.address.street}
                 </p>
                 <p className="text-coffee-medium mb-4">
-                  052 01 Spišská Nová Ves, Slovensko
+                  {siteConfig.contact.address.city}, {siteConfig.contact.address.country}
                 </p>
                 <a 
-                  href="https://maps.google.com/?q=Ing.+Straku+9003,+Spišská+Nová+Ves" 
+                  href={siteConfig.contact.address.googleMapsUrl}
                   target="_blank" 
                   rel="noopener noreferrer"
                 >
@@ -91,13 +92,13 @@ export function Visit() {
               <CardContent className="space-y-4">
                 <div className="flex items-center gap-3">
                   <Phone className="h-5 w-5 text-coffee-medium" />
-                  <span className="text-coffee-dark">+421 xxx xxx xxx</span>
+                  <span className="text-coffee-dark">{siteConfig.contact.phone}</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Mail className="h-5 w-5 text-coffee-medium" />
-                  <span className="text-coffee-dark">info@amccoffeeshop.sk</span>
+                  <span className="text-coffee-dark">{siteConfig.contact.email}</span>
                 </div>
-                <a href="mailto:info@amccoffeeshop.sk">
+                <a href={`mailto:${siteConfig.contact.email}`}>
                   <Button variant="warm" size="sm" className="w-full">
                     Napísať email
                   </Button>
@@ -114,10 +115,10 @@ export function Visit() {
                 <MapPin className="h-16 w-16 mx-auto mb-4 opacity-80" />
                 <h3 className="text-2xl font-bold mb-2">Mapa lokácie</h3>
                 <p className="opacity-90 mb-4">
-                  Ing. Straku 9003, Spišská Nová Ves
+                  {siteConfig.contact.address.street}, {siteConfig.contact.address.city}
                 </p>
                 <a 
-                  href="https://maps.google.com/?q=Ing.+Straku+9003,+Spišská+Nová+Ves" 
+                  href={siteConfig.contact.address.googleMapsUrl}
                   target="_blank" 
                   rel="noopener noreferrer"
                 >
