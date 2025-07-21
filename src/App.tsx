@@ -25,22 +25,22 @@ function App() {
   // Placeholder for analytics initialization
   useEffect(() => {
     if (consent === "accepted") {
-      // Inject Google Analytics script if not already present
+      // Initialize dataLayer and gtag before loading the script
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = (...args: any[]) => {
+        window.dataLayer!.push(args);
+      };
+
       if (!window.gtagScriptLoaded) {
         const script = document.createElement("script");
-        script.src = "https://www.googletagmanager.com/gtag/js?id=G-B2BPXNEV1J"; // TODO: Replace with your GA4 Measurement ID
+        script.src = "https://www.googletagmanager.com/gtag/js?id=G-B2BPXNEV1J";
         script.async = true;
         document.head.appendChild(script);
         window.gtagScriptLoaded = true;
       }
-      window.dataLayer = window.dataLayer || [];
-      // Type gtag as accepting any arguments
-      const gtag = (...args: any[]) => {
-        window.dataLayer!.push(args);
-      };
-      window.gtag = gtag;
-      gtag("js", new Date());
-      gtag("config", "G-XXXXXXXXXX", {
+
+      window.gtag("js", new Date());
+      window.gtag("config", "G-B2BPXNEV1J", {
         anonymize_ip: true,
         page_path: window.location.pathname + window.location.search,
         referrer: document.referrer || undefined,
@@ -48,7 +48,7 @@ function App() {
 
       // Track page views on route change
       const handlePageView = () => {
-        gtag("event", "page_view", {
+        window.gtag!("event", "page_view", {
           page_path: window.location.pathname + window.location.search,
           referrer: document.referrer || undefined,
         });
@@ -61,7 +61,7 @@ function App() {
       const start = Date.now();
       const handleUnload = () => {
         const duration = Math.round((Date.now() - start) / 1000); // seconds
-        gtag("event", "visit_duration", { duration });
+        window.gtag!("event", "visit_duration", { duration });
       };
       window.addEventListener("beforeunload", handleUnload);
       return () => {
