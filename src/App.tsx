@@ -9,6 +9,14 @@ import NotFound from "./pages/NotFound";
 import { CookieConsent, useCookieConsent } from "./components/CookieConsent";
 import { useEffect } from "react";
 
+declare global {
+  interface Window {
+    gtagScriptLoaded?: boolean;
+    gtag?: (...args: any[]) => void;
+    dataLayer?: any[];
+  }
+}
+
 const queryClient = new QueryClient();
 
 function App() {
@@ -26,9 +34,10 @@ function App() {
         window.gtagScriptLoaded = true;
       }
       window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        window.dataLayer.push(arguments);
-      }
+      // Type gtag as accepting any arguments
+      const gtag = (...args: any[]) => {
+        window.dataLayer!.push(args);
+      };
       window.gtag = gtag;
       gtag("js", new Date());
       gtag("config", "G-XXXXXXXXXX", {
