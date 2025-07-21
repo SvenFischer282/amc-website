@@ -28,7 +28,7 @@ function App() {
       // Inject Google Analytics script if not already present
       if (!window.gtagScriptLoaded) {
         const script = document.createElement("script");
-        script.src = "https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"; // TODO: Replace with your GA4 Measurement ID
+        script.src = "https://www.googletagmanager.com/gtag/js?id=G-B2BPXNEV1J"; // TODO: Replace with your GA4 Measurement ID
         script.async = true;
         document.head.appendChild(script);
         window.gtagScriptLoaded = true;
