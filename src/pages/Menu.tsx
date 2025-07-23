@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Coffee, UtensilsCrossed, Cake, Star, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -10,9 +11,14 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
 import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
 import { siteConfig } from "@/config/site";
 
 export default function Menu() {
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  }, []);
+
   const coffeeMenu = [
     {
       name: "Espresso",
@@ -302,6 +308,7 @@ export default function Menu() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

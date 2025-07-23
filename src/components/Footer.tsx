@@ -1,5 +1,6 @@
 import { Coffee, Instagram, MapPin, Clock, Heart } from "lucide-react";
 import { siteConfig } from "@/config/site";
+import logoAMC from "@/assets/logo-amc-breakky.jpg";
 
 export function Footer() {
   return (
@@ -9,12 +10,14 @@ export function Footer() {
           {/* Logo & Description */}
           <div className="md:col-span-2">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-lg">AMC</span>
-              </div>
+              <img
+                src={logoAMC}
+                alt="AMC Breakky Logo"
+                className="w-12 h-12 rounded-full object-cover bg-white"
+              />
               <div>
-                <h3 className="font-bold text-xl">{siteConfig.name}</h3>
-                <p className="text-coffee-light">{siteConfig.tagline}</p>
+                <h3 className="font-bold text-xl">AMC Breakky</h3>
+                <p className="text-coffee-light">Raňajky & Brunch</p>
               </div>
             </div>
             <p className="text-coffee-light leading-relaxed mb-4 max-w-md">
@@ -47,9 +50,9 @@ export function Footer() {
           <div>
             <h4 className="font-bold text-lg mb-4 text-white">Kontakt</h4>
             <div className="space-y-3">
-              <a 
+              <a
                 href={siteConfig.contact.address.googleMapsUrl}
-                target="_blank" 
+                target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-start gap-3 hover:text-primary transition-colors group"
               >
@@ -64,7 +67,10 @@ export function Footer() {
                 <Clock className="h-4 w-4 text-primary flex-shrink-0" />
                 <div className="text-coffee-light text-sm">
                   <p>Pon-Pia: {siteConfig.openingHours.weekdays.hours}</p>
-                  <p>So-Ne: {siteConfig.openingHours.saturday.hours}/{siteConfig.openingHours.sunday.hours.split(' - ')[1]}</p>
+                  <p>
+                    So-Ne: {siteConfig.openingHours.saturday.hours}/
+                    {siteConfig.openingHours.sunday.hours.split(" - ")[1]}
+                  </p>
                 </div>
               </div>
 

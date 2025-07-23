@@ -17,6 +17,7 @@ import {
 } from "@/components/ui/sheet";
 import { useState } from "react";
 import { siteConfig } from "@/config/site";
+import logoAMC from "@/assets/logo-amc-breakky.jpg";
 
 export function Header() {
   const location = useLocation();
@@ -57,14 +58,16 @@ export function Header() {
             to="/"
             className="flex items-center gap-3 hover:opacity-80 transition-opacity"
           >
-            <div className="w-12 h-12 bg-coffee-dark rounded-full flex items-center justify-center">
-              <span className="text-white font-bold text-lg">AMC</span>
-            </div>
+            <img
+              src={logoAMC}
+              alt="AMC Breakky Logo"
+              className="w-12 h-12 rounded-full object-cover bg-white"
+            />
             <div>
               <h1 className="font-bold text-xl text-coffee-dark">
-                AMC Tvoj Coffeeshop
+                AMC Breakky
               </h1>
-              <p className="text-sm text-muted-foreground">& Breakky</p>
+              <p className="text-sm text-muted-foreground">Raňajky & Brunch</p>
             </div>
           </Link>
 
@@ -179,7 +182,7 @@ export function Header() {
                     <div className="flex items-center gap-3 text-coffee-medium">
                       <Instagram className="h-4 w-4" />
                       <span className="text-sm">
-                        {siteConfig.contact.social.instagram.coffeeshop}
+                        {siteConfig.contact.social.instagram.breakky}
                       </span>
                     </div>
                   </div>

@@ -1,26 +1,24 @@
 export const siteConfig = {
   // Site Information
-  name: "AMC Tvoj Coffeeshop",
-  tagline: "& Breakky",
+  name: "AMC Breakky",
+  tagline: "Raňajky & Brunch",
   description:
-    "Prvá specialty coffeeshop v Spišskej Novej Vsi. Miesto, kde sa káva stretáva s priateľstvom a každé ráno začína s úsmevom.",
+    "AMC Breakky - Prvá špecializovaná raňajkáreň v Spišskej Novej Vsi. Miesto, kde každý deň začína s chutnými raňajkami, brunchom a úsmevom.",
 
   // Contact Information
   contact: {
     phone: "+421 xxx xxx xxx",
-    email: "info@amccoffeeshop.sk",
+    email: "info@amcbreakky.sk",
     address: {
-      street: "Ing. Straku 9003",
+      street: "Letná 54/47",
       city: "052 01 Spišská Nová Ves",
       country: "Slovakia",
       googleMapsUrl:
-        "https://www.google.com/maps/place/AMC+Tvoj+Coffeeshop/@48.9467504,20.5594334,17z/data=!4m15!1m8!3m7!1s0x473e4f2abdc3f633:0x417fb5d0019c8364!2zSW5nLiBTdHJha3UsIDA1MiAwMSBTcGnFoXNrw6EgTm92w6EgVmVz!3b1!8m2!3d48.9467504!4d20.5620083!16s%2Fg%2F1tgfvdcj!3m5!1s0x473e4f2abb95922b:0xad6059a5ba131be2!8m2!3d48.9462837!4d20.5616138!16s%2Fg%2F11g6sr8gy1?entry=ttu&g_ep=EgoyMDI1MDcxNi4wIKXMDSoASAFQAw%3D%3D",
+        "https://www.google.com/maps/place/Letn%C3%A1+54%2F47,+052+01+Spi%C5%A1sk%C3%A1+Nov%C3%A1+Ves,+Slovakia/",
     },
     social: {
       instagram: {
-        coffeeshop: "@amctvojcoffeeshop",
         breakky: "@amcbreakky",
-        coffeeshopUrl: "https://instagram.com/amctvojcoffeeshop",
         breakkyUrl: "https://instagram.com/amcbreakky",
       },
     },
@@ -57,8 +55,8 @@ export const siteConfig = {
 
   // Footer
   footer: {
-    copyright: "© 2024 AMC Tvoj Coffeeshop & Breakky. Všetky práva vyhradené.",
-    madeWith: "Vytvorené s láskou pre našu komunitu",
+    copyright: "© 2024 AMC Breakky. Všetky práva vyhradené.",
+    madeWith: "Vytvorené s láskou pre milovníkov raňajok",
   },
 } as const;
 

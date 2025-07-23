@@ -10,33 +10,33 @@ export function Gallery() {
     {
       src: heroImage,
       alt: "Latte art a káva AMC",
-      category: "coffee"
+      category: "coffee",
     },
     {
       src: breakfastImage,
       alt: "Čerstvé raňajky",
-      category: "food"
+      category: "food",
     },
     {
       src: pastriesImage,
       alt: "Domáce pečivo",
-      category: "pastry"
+      category: "pastry",
     },
     {
       src: cafeImage,
       alt: "Interiér kaviarne",
-      category: "interior"
+      category: "interior",
     },
     {
       src: heroImage,
       alt: "Specialty káva",
-      category: "coffee"
+      category: "coffee",
     },
     {
       src: breakfastImage,
       alt: "Zdravý breakfast bowl",
-      category: "food"
-    }
+      category: "food",
+    },
   ];
 
   return (
@@ -48,8 +48,8 @@ export function Gallery() {
             Galéria chutí
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Pozrite si naše najkrajšie momenty, chutné jedlá a atmosféru, 
-            ktorá robí AMC jedinečným miestom
+            Pozrite si naše najkrajšie raňajkové momenty, chutné jedlá a
+            atmosféru, ktorá robí AMC Breakky jedinečným miestom na brunch.
           </p>
         </div>
 
@@ -58,21 +58,18 @@ export function Gallery() {
           <div className="flex justify-center gap-8 mb-6">
             <div className="text-center">
               <Instagram className="h-12 w-12 text-primary mx-auto mb-2" />
-              <h3 className="font-bold text-coffee-dark">@amctvojcoffeeshop</h3>
-              <p className="text-sm text-muted-foreground">Hlavný profil</p>
-            </div>
-            <div className="text-center">
-              <Instagram className="h-12 w-12 text-primary mx-auto mb-2" />
               <h3 className="font-bold text-coffee-dark">@amcbreakky</h3>
-              <p className="text-sm text-muted-foreground">Raňajky & jedlo</p>
+              <p className="text-sm text-muted-foreground">Raňajky & brunch</p>
             </div>
+            {/*  */}
           </div>
           <p className="text-coffee-medium mb-6">
-            Sledujte nás na Instagrame pre najnovšie fotky, špeciálne ponuky a denné menu
+            Sledujte nás na Instagrame pre najnovšie fotky, špeciálne ponuky a
+            denné menu
           </p>
-          <a 
-            href="https://instagram.com/amctvojcoffeeshop" 
-            target="_blank" 
+          <a
+            href="https://instagram.com/amcbreakky"
+            target="_blank"
             rel="noopener noreferrer"
           >
             <Button variant="coffee" size="lg" className="group">
@@ -85,12 +82,12 @@ export function Gallery() {
         {/* Photo Grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-12">
           {galleryImages.map((image, index) => (
-            <div 
-              key={index} 
+            <div
+              key={index}
               className="relative group overflow-hidden rounded-lg shadow-soft hover:shadow-warm transition-all duration-300 transform hover:scale-105"
             >
-              <img 
-                src={image.src} 
+              <img
+                src={image.src}
                 alt={image.alt}
                 className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
               />
@@ -109,16 +106,16 @@ export function Gallery() {
             Zdieľajte svoje zážitky
           </h3>
           <p className="text-muted-foreground mb-6 max-w-lg mx-auto">
-            Označte nás na svojich fotkách hashtag-om #AMCcoffeeshop 
-            a my ich zdieľame na našom profile!
+            Označte nás na svojich fotkách hashtag-om #AMCBreakky a my ich
+            zdieľame na našom profile!
           </p>
-          <a 
-            href="https://instagram.com/explore/tags/AMCcoffeeshop/" 
-            target="_blank" 
+          <a
+            href="https://instagram.com/explore/tags/AMCBreakky/"
+            target="_blank"
             rel="noopener noreferrer"
           >
             <Button variant="warm" size="lg">
-              #AMCcoffeeshop
+              #AMCBreakky
             </Button>
           </a>
         </div>

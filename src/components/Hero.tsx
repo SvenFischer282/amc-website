@@ -22,12 +22,12 @@ export function Hero() {
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
               Vitajte v{" "}
               <span className="font-script text-primary bg-white/10 px-4 py-2 rounded-lg">
-                AMC
+                AMC Breakky
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed">
-              Prvá specialty coffeeshop v Spišskej Novej Vsi. Miesto, kde sa
-              káva stretáva s priateľstvom a každé ráno začína s úsmevom.
+              Prvá raňajkáreň a brunch v Spišskej Novej Vsi. Miesto, kde každý
+              deň začína s chutnými raňajkami, brunchom a úsmevom.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
@@ -45,7 +45,7 @@ export function Hero() {
                 }
               >
                 <Button variant="warm" size="xl">
-                  Naša káva
+                  Náš príbeh
                 </Button>
               </button>
             </div>

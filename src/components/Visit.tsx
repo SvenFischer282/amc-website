@@ -5,9 +5,18 @@ import { siteConfig } from "@/config/site";
 
 export function Visit() {
   const openingHours = [
-    { day: siteConfig.openingHours.weekdays.days, time: siteConfig.openingHours.weekdays.hours },
-    { day: siteConfig.openingHours.saturday.days, time: siteConfig.openingHours.saturday.hours },
-    { day: siteConfig.openingHours.sunday.days, time: siteConfig.openingHours.sunday.hours }
+    {
+      day: siteConfig.openingHours.weekdays.days,
+      time: siteConfig.openingHours.weekdays.hours,
+    },
+    {
+      day: siteConfig.openingHours.saturday.days,
+      time: siteConfig.openingHours.saturday.hours,
+    },
+    {
+      day: siteConfig.openingHours.sunday.days,
+      time: siteConfig.openingHours.sunday.hours,
+    },
   ];
 
   return (
@@ -19,8 +28,8 @@ export function Visit() {
             Navštívte nás
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Nachádzame sa v srdci Spišskej Novej Vsi. Príďte si vychutnať 
-            skvelú kávu v príjemnej atmosfére.
+            Nachádzame sa v srdci Spišskej Novej Vsi. Príďte si vychutnať skvelú
+            kávu v príjemnej atmosfére.
           </p>
         </div>
 
@@ -40,11 +49,12 @@ export function Visit() {
                   {siteConfig.contact.address.street}
                 </p>
                 <p className="text-coffee-medium mb-4">
-                  {siteConfig.contact.address.city}, {siteConfig.contact.address.country}
+                  {siteConfig.contact.address.city},{" "}
+                  {siteConfig.contact.address.country}
                 </p>
-                <a 
+                <a
                   href={siteConfig.contact.address.googleMapsUrl}
-                  target="_blank" 
+                  target="_blank"
                   rel="noopener noreferrer"
                 >
                   <Button variant="coffee" size="sm" className="group">
@@ -66,16 +76,24 @@ export function Visit() {
               <CardContent>
                 <div className="space-y-3">
                   {openingHours.map((schedule, index) => (
-                    <div key={index} className="flex justify-between items-center py-2 border-b border-coffee-light/20 last:border-b-0">
-                      <span className="text-coffee-medium font-medium">{schedule.day}</span>
-                      <span className="text-coffee-dark font-semibold">{schedule.time}</span>
+                    <div
+                      key={index}
+                      className="flex justify-between items-center py-2 border-b border-coffee-light/20 last:border-b-0"
+                    >
+                      <span className="text-coffee-medium font-medium">
+                        {schedule.day}
+                      </span>
+                      <span className="text-coffee-dark font-semibold">
+                        {schedule.time}
+                      </span>
                     </div>
                   ))}
                 </div>
                 <div className="mt-6 p-4 bg-white/50 rounded-lg">
                   <p className="text-sm text-coffee-medium">
-                    <strong>Poznámka:</strong> Otváracie hodiny sa môžu meniť počas sviatkov. 
-                    Sledujte naš Instagram pre aktuálne informácie.
+                    <strong>Poznámka:</strong> Otváracie hodiny sa môžu meniť
+                    počas sviatkov. Sledujte naš Instagram pre aktuálne
+                    informácie.
                   </p>
                 </div>
               </CardContent>
@@ -92,11 +110,15 @@ export function Visit() {
               <CardContent className="space-y-4">
                 <div className="flex items-center gap-3">
                   <Phone className="h-5 w-5 text-coffee-medium" />
-                  <span className="text-coffee-dark">{siteConfig.contact.phone}</span>
+                  <span className="text-coffee-dark">
+                    {siteConfig.contact.phone}
+                  </span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Mail className="h-5 w-5 text-coffee-medium" />
-                  <span className="text-coffee-dark">{siteConfig.contact.email}</span>
+                  <span className="text-coffee-dark">
+                    {siteConfig.contact.email}
+                  </span>
                 </div>
                 <a href={`mailto:${siteConfig.contact.email}`}>
                   <Button variant="warm" size="sm" className="w-full">
@@ -109,23 +131,34 @@ export function Visit() {
 
           {/* Map Placeholder */}
           <div className="space-y-6">
-            <div className="bg-gradient-hero rounded-2xl h-96 flex items-center justify-center text-white relative overflow-hidden">
-              <div className="absolute inset-0 bg-coffee-dark/20"></div>
-              <div className="relative z-10 text-center">
-                <MapPin className="h-16 w-16 mx-auto mb-4 opacity-80" />
-                <h3 className="text-2xl font-bold mb-2">Mapa lokácie</h3>
+            <div className="bg-gradient-hero rounded-2xl h-96 flex items-center justify-center text-white relative overflow-hidden p-0">
+              <iframe
+                title="Mapa lokácie"
+                src={`https://www.google.com/maps?q=${encodeURIComponent(
+                  siteConfig.contact.address.street +
+                    ", " +
+                    siteConfig.contact.address.city
+                )}&output=embed`}
+                width="100%"
+                height="100%"
+                style={{
+                  border: 0,
+                  borderRadius: "1rem",
+                  width: "100%",
+                  height: "100%",
+                }}
+                allowFullScreen={true}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="absolute inset-0 w-full h-full rounded-2xl"
+              ></iframe>
+              <div className="absolute inset-0 bg-coffee-dark/20 pointer-events-none rounded-2xl"></div>
+              <div className="relative z-10 text-center pointer-events-none">
+                {/* <h3 className="text-2xl font-bold mb-2">Mapa lokácie</h3>
                 <p className="opacity-90 mb-4">
-                  {siteConfig.contact.address.street}, {siteConfig.contact.address.city}
-                </p>
-                <a 
-                  href={siteConfig.contact.address.googleMapsUrl}
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                >
-                  <Button variant="hero" className="bg-white text-coffee-dark hover:bg-cream">
-                    Otvoriť v Google Maps
-                  </Button>
-                </a>
+                  {siteConfig.contact.address.street},{" "}
+                  {siteConfig.contact.address.city}
+                </p> */}
               </div>
             </div>
 
@@ -134,9 +167,9 @@ export function Visit() {
               <CardContent className="p-6">
                 <h3 className="font-bold text-coffee-dark mb-3">Parkovanie</h3>
                 <p className="text-coffee-medium text-sm leading-relaxed">
-                  K dispozícii sú parkovacie miesta priamo pred kaviarňou. 
-                  V centre mesta je dostupné aj verejné parkovanie v krátkom 
-                  pešom dosahu.
+                  K dispozícii sú parkovacie miesta priamo pred kaviarňou. V
+                  centre mesta je dostupné aj verejné parkovanie v krátkom pešom
+                  dosahu.
                 </p>
               </CardContent>
             </Card>
@@ -149,8 +182,9 @@ export function Visit() {
                   Tip pre návštevníkov
                 </h3>
                 <p className="text-coffee-medium text-sm leading-relaxed">
-                  Pre najlepší zážitok odporúčame návštevu ráno na čerstvé raňajky 
-                  alebo popoludní na specialty kávy. Víkendy bývajú rušnejšie!
+                  Pre najlepší zážitok odporúčame návštevu ráno na čerstvé
+                  raňajky alebo popoludní na specialty kávy. Víkendy bývajú
+                  rušnejšie!
                 </p>
               </CardContent>
             </Card>
