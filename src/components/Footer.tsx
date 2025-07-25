@@ -77,7 +77,6 @@ export function Footer() {
               <div className="flex items-center gap-3">
                 <Instagram className="h-4 w-4 text-primary flex-shrink-0" />
                 <div className="text-coffee-light text-sm">
-                  <p>{siteConfig.contact.social.instagram.coffeeshop}</p>
                   <p>{siteConfig.contact.social.instagram.breakky}</p>
                 </div>
               </div>
@@ -92,14 +91,6 @@ export function Footer() {
               {siteConfig.footer.copyright}
             </p>
             <div className="flex items-center gap-4">
-              <a
-                href={siteConfig.contact.social.instagram.coffeeshopUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-coffee-light hover:text-primary transition-colors"
-              >
-                <Instagram className="h-5 w-5" />
-              </a>
               <a
                 href={siteConfig.contact.social.instagram.breakkyUrl}
                 target="_blank"

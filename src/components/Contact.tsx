@@ -62,14 +62,6 @@ export function Contact() {
                     <div>
                       <h3 className="font-bold text-lg">Instagram</h3>
                       <a
-                        href={siteConfig.contact.social.instagram.coffeeshopUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="opacity-90 hover:text-primary transition-colors block"
-                      >
-                        {siteConfig.contact.social.instagram.coffeeshop}
-                      </a>
-                      <a
                         href={siteConfig.contact.social.instagram.breakkyUrl}
                         target="_blank"
                         rel="noopener noreferrer"
