@@ -85,17 +85,17 @@ export const CookieConsent = () => {
     <>
       {/* Cookie Consent Banner */}
       {showBanner && (
-        <div className="fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-gray-200 shadow-lg p-4 md:p-6">
+        <div className="fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-gray-200 shadow-lg p-3 md:p-6">
           <div className="container mx-auto max-w-6xl">
-            <div className="flex flex-col md:flex-row items-start md:items-center gap-4">
+            <div className="flex flex-col md:flex-row items-start md:items-center gap-3 md:gap-4">
               <div className="flex-1">
                 <div className="flex items-center gap-2 mb-2">
-                  <AlertCircle className="h-5 w-5 text-orange-600" />
-                  <h3 className="font-semibold text-gray-900">
+                  <AlertCircle className="h-4 w-4 md:h-5 md:w-5 text-orange-600" />
+                  <h3 className="font-semibold text-gray-900 text-sm md:text-base">
                     Používanie cookies
                   </h3>
                 </div>
-                <p className="text-sm text-gray-600 mb-4">
+                <p className="text-xs md:text-sm text-gray-600 mb-3 md:mb-4">
                   Používame cookies na zlepšenie vášho zážitku na našej webovej
                   stránke. Nevyhnutné cookies sú vždy povolené, ostatné môžete
                   spravovať podľa vašich preferencií.

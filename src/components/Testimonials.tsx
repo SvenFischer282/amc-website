@@ -23,27 +23,6 @@ const testimonials = [
     text: "Prvá špecializovaná kaviarňa v meste a stále najlepšia! Milujeme víkendové brunche a príjemnú atmosféru.",
     date: "Pred 3 týždňami",
   },
-  {
-    id: 4,
-    name: "Tomáš Horný",
-    rating: 5,
-    text: "Skvelé miesto na pracovné stretnutia aj rodinné raňajky. Wi-Fi funguje perfektne a káva je vždy na vysokej úrovni.",
-    date: "Pred týždňom",
-  },
-  {
-    id: 5,
-    name: "Andrea Lukášová",
-    rating: 5,
-    text: "Obožujem ich domáce koláče a priateľskú obsluhu. AMC Breakky je už roky mojou obľúbenou kaviarňou v meste!",
-    date: "Pred 2 mesiacmi",
-  },
-  {
-    id: 6,
-    name: "Martin Čech",
-    rating: 5,
-    text: "Výborná káva, čerstvé potraviny a príjemné prostredie. Personál sa vždy postará, aby ste sa cítili vítaní.",
-    date: "Pred mesiacom",
-  },
 ];
 
 export function Testimonials() {

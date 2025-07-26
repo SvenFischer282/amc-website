@@ -16,23 +16,27 @@ export function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 py-20">
+      <div className="relative z-10 container mx-auto px-4 py-12 md:py-20">
         <div className="max-w-3xl">
           <div className="animate-fade-in-up">
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-              Vitajte v{" "}
-              <span className="font-script text-primary bg-white/10 px-4 py-2 rounded-lg">
+            <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold text-white mb-5 md:mb-6 leading-tight drop-shadow-lg text-center sm:text-left">
+              <span className="block mb-2 tracking-wide">Vitajte v</span>
+              <span className="font-script text-primary bg-white/20 px-5 py-2 md:px-6 md:py-3 rounded-2xl text-4xl sm:text-5xl md:text-7xl shadow-lg inline-block border-2 border-primary/30">
                 AMC Breakky
               </span>
             </h1>
-            <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed">
-              Prvá raňajkáreň a brunch v Spišskej Novej Vsi. Miesto, kde každý
-              deň začína s chutnými raňajkami, brunchom a úsmevom.
+            <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-6 md:mb-8 leading-relaxed text-center sm:text-left">
+              Raňajkáreň a brunch v Spišskej Novej Vsi. Miesto, kde každý deň
+              začína s chutnými raňajkami, brunchom a úsmevom.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 mb-12">
+            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 mb-8 md:mb-12">
               <Link to="/menu">
-                <Button variant="hero" size="xl" className="group">
+                <Button
+                  variant="hero"
+                  size="xl"
+                  className="group w-full sm:w-auto"
+                >
                   Preskúmajte menu
                   <Coffee className="ml-2 h-5 w-5 group-hover:rotate-12 transition-transform" />
                 </Button>
@@ -44,19 +48,19 @@ export function Hero() {
                     ?.scrollIntoView({ behavior: "smooth" })
                 }
               >
-                <Button variant="warm" size="xl">
+                <Button variant="warm" size="xl" className="w-full sm:w-auto">
                   Náš príbeh
                 </Button>
               </button>
             </div>
 
             {/* Quick Info */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-white">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 text-white">
               <a
                 href={siteConfig.contact.address.googleMapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-4 hover:bg-white/20 transition-colors group"
+                className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-3 md:p-4 hover:bg-white/20 transition-colors group"
               >
                 <MapPin className="h-5 w-5 text-primary" />
                 <div>
@@ -76,7 +80,7 @@ export function Hero() {
                     .getElementById("visit")
                     ?.scrollIntoView({ behavior: "smooth" })
                 }
-                className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-4 hover:bg-white/20 transition-colors cursor-pointer"
+                className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-3 md:p-4 hover:bg-white/20 transition-colors cursor-pointer"
               >
                 <Clock className="h-5 w-5 text-primary" />
                 <div>
@@ -95,7 +99,7 @@ export function Hero() {
                 href="https://instagram.com/amctvojcoffeeshop"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-4 hover:bg-white/20 transition-colors"
+                className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-3 md:p-4 hover:bg-white/20 transition-colors"
               >
                 <Instagram className="h-5 w-5 text-primary" />
                 <div>

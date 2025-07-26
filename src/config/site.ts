@@ -63,7 +63,7 @@ export const siteConfig = {
 
   // Footer
   footer: {
-    copyright: "© 2024 AMC Breakky. Všetky práva vyhradené.",
+    copyright: "© 2025 AMC Breakky. Všetky práva vyhradené.",
     madeWith: "Vytvorené s láskou pre milovníkov raňajok",
   },
 } as const;
