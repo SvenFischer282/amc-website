@@ -96,14 +96,14 @@ export function Hero() {
               </button>
 
               <a
-                href="https://instagram.com/amctvojcoffeeshop"
+                href={siteConfig.contact.social.instagram.breakkyUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-3 md:p-4 hover:bg-white/20 transition-colors"
               >
                 <Instagram className="h-5 w-5 text-primary" />
                 <div>
-                  <p className="font-semibold">@amctvojcoffeeshop</p>
+                  <p className="font-semibold">@amcbreakky</p>
                   <p className="text-sm opacity-80">Sledujte nás</p>
                 </div>
               </a>
