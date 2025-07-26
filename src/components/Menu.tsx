@@ -123,11 +123,7 @@ export function Menu() {
             <a
               href={`tel:${siteConfig.contact.phone}`}
               className="w-full sm:w-auto"
-            >
-              <Button variant="warm" size="lg" className="w-full sm:w-auto">
-                Objednať online
-              </Button>
-            </a>
+            ></a>
           </div>
         </div>
       </div>

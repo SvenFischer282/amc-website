@@ -117,19 +117,13 @@ export function Header() {
             >
               Galéria
             </button>
-            <button
-              onClick={() => scrollToSection("visit")}
-              className="text-coffee-medium hover:text-primary transition-colors cursor-pointer font-medium"
-            >
-              Navštívte nás
-            </button>
             <Button
               variant="coffee"
               size="sm"
-              onClick={handleContactClick}
+              onClick={() => scrollToSection("visit")}
               className="font-semibold"
             >
-              Kontakt
+              Navštívte nás
             </Button>
           </nav>
 
