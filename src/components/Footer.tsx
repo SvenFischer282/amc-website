@@ -46,6 +46,37 @@ export function Footer() {
             </ul>
           </div>
 
+          {/* Legal Links */}
+          <div>
+            <h4 className="font-bold text-lg mb-4 text-white">Právne informácie</h4>
+            <ul className="space-y-2">
+              <li>
+                <a
+                  href="/privacy-policy"
+                  className="text-coffee-light hover:text-primary transition-colors"
+                >
+                  Ochrana údajov
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/terms"
+                  className="text-coffee-light hover:text-primary transition-colors"
+                >
+                  Podmienky používania
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/cookies"
+                  className="text-coffee-light hover:text-primary transition-colors"
+                >
+                  Cookies
+                </a>
+              </li>
+            </ul>
+          </div>
+
           {/* Contact Info */}
           <div>
             <h4 className="font-bold text-lg mb-4 text-white">Kontakt</h4>
@@ -102,6 +133,9 @@ export function Footer() {
             </div>
           </div>
         </div>
+      </div>
+      <div className="text-center text-xs text-coffee-light mt-4 opacity-70">
+        Created by Sven Fischer
       </div>
     </footer>
   );

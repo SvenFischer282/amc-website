@@ -7,43 +7,43 @@ const testimonials = [
     name: "Mária Nováková",
     rating: 5,
     text: "Najlepšie raňajky v Spišskej Novej Vsi! Káva je výborná a personál je vždy milý a usmiaty. Cítim sa tu ako doma.",
-    date: "Pred 2 týždňami"
+    date: "Pred 2 týždňami",
   },
   {
     id: 2,
     name: "Peter Kováč",
     rating: 5,
     text: "Úžasné miesto pre ranný kávový rituál. Espresso je perfektné a croissanty sú čerstvé každý deň. Určite odporúčam!",
-    date: "Pred mesiacom"
+    date: "Pred mesiacom",
   },
   {
     id: 3,
     name: "Jana Svobodová",
     rating: 5,
     text: "Prvá špecializovaná kaviarňa v meste a stále najlepšia! Milujeme víkendové brunche a príjemnú atmosféru.",
-    date: "Pred 3 týždňami"
+    date: "Pred 3 týždňami",
   },
   {
     id: 4,
     name: "Tomáš Horný",
     rating: 5,
     text: "Skvelé miesto na pracovné stretnutia aj rodinné raňajky. Wi-Fi funguje perfektne a káva je vždy na vysokej úrovni.",
-    date: "Pred týždňom"
+    date: "Pred týždňom",
   },
   {
     id: 5,
     name: "Andrea Lukášová",
     rating: 5,
     text: "Obožujem ich domáce koláče a priateľskú obsluhu. AMC Breakky je už roky mojou obľúbenou kaviarňou v meste!",
-    date: "Pred 2 mesiacmi"
+    date: "Pred 2 mesiacmi",
   },
   {
     id: 6,
     name: "Martin Čech",
     rating: 5,
     text: "Výborná káva, čerstvé potraviny a príjemné prostredie. Personál sa vždy postará, aby ste sa cítili vítaní.",
-    date: "Pred mesiacom"
-  }
+    date: "Pred mesiacom",
+  },
 ];
 
 export function Testimonials() {
@@ -59,30 +59,31 @@ export function Testimonials() {
             <Quote className="h-8 w-8 text-primary rotate-180" />
           </div>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Sme hrdí na našu komunitu spokojných zákazníkov, ktorí sa k nám radi vracajú
+            Sme hrdí na našu komunitu spokojných zákazníkov, ktorí sa k nám radi
+            vracajú
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {testimonials.map((testimonial) => (
-            <Card 
-              key={testimonial.id} 
+            <Card
+              key={testimonial.id}
               className="bg-card/80 backdrop-blur-sm border-0 shadow-soft hover:shadow-warm transition-all duration-300 hover:-translate-y-1"
             >
               <CardContent className="p-6">
                 <div className="flex items-center gap-1 mb-4">
                   {Array.from({ length: testimonial.rating }).map((_, i) => (
-                    <Star 
-                      key={i} 
-                      className="h-5 w-5 fill-primary text-primary" 
+                    <Star
+                      key={i}
+                      className="h-5 w-5 fill-primary text-primary"
                     />
                   ))}
                 </div>
-                
+
                 <blockquote className="text-foreground leading-relaxed mb-4">
                   "{testimonial.text}"
                 </blockquote>
-                
+
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="font-semibold text-foreground">
@@ -108,7 +109,8 @@ export function Testimonials() {
               Pridajte sa k našej komunite!
             </h3>
             <p className="text-muted-foreground mb-6">
-              Navštívte nás a presvedčte sa sami, prečo nás naši zákazníci milujú
+              Navštívte nás a presvedčte sa sami, prečo nás naši zákazníci
+              milujú
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
               <a
@@ -122,7 +124,14 @@ export function Testimonials() {
               </a>
               <a
                 href="#visit"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-secondary text-secondary-foreground rounded-lg hover:bg-secondary/90 transition-colors font-semibold"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-secondary text-secondary-foreground rounded-lg hover:bg-secondary/90 transition-colors font-semibold cursor-pointer"
+                onClick={(e) => {
+                  e.preventDefault();
+                  const el = document.getElementById("visit");
+                  if (el) {
+                    el.scrollIntoView({ behavior: "smooth", block: "start" });
+                  }
+                }}
               >
                 Navštívte nás
               </a>

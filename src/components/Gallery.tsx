@@ -1,11 +1,17 @@
 import { Instagram, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Dialog, DialogTrigger, DialogContent } from "@/components/ui/dialog";
+import { useState } from "react";
 import breakfastImage from "@/assets/breakfast-plate.jpg";
 import pastriesImage from "@/assets/pastries.jpg";
 import cafeImage from "@/assets/cafe-interior.jpg";
 import heroImage from "@/assets/hero-coffee.jpg";
 
 export function Gallery() {
+  const [selectedImage, setSelectedImage] = useState<null | {
+    src: string;
+    alt: string;
+  }>(null);
   const galleryImages = [
     {
       src: heroImage,
@@ -82,21 +88,36 @@ export function Gallery() {
         {/* Photo Grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-12">
           {galleryImages.map((image, index) => (
-            <div
+            <Dialog
               key={index}
-              className="relative group overflow-hidden rounded-lg shadow-soft hover:shadow-warm transition-all duration-300 transform hover:scale-105"
+              open={selectedImage?.src === image.src}
+              onOpenChange={(open) => !open && setSelectedImage(null)}
             >
-              <img
-                src={image.src}
-                alt={image.alt}
-                className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-coffee-dark/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="absolute bottom-4 left-4">
-                  <p className="text-white font-semibold">{image.alt}</p>
+              <DialogTrigger asChild>
+                <div
+                  className="relative group overflow-hidden rounded-lg shadow-soft hover:shadow-warm transition-all duration-300 transform hover:scale-105 cursor-pointer"
+                  onClick={() => setSelectedImage(image)}
+                >
+                  <img
+                    src={image.src}
+                    alt={image.alt}
+                    className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-coffee-dark/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="absolute bottom-4 left-4">
+                      <p className="text-white font-semibold">{image.alt}</p>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
+              </DialogTrigger>
+              <DialogContent className="max-w-3xl p-0 bg-transparent border-0 shadow-none flex items-center justify-center">
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  className="w-full h-auto max-h-[80vh] rounded-lg shadow-2xl"
+                />
+              </DialogContent>
+            </Dialog>
           ))}
         </div>
 

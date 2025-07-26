@@ -265,9 +265,9 @@ export default function Menu() {
 
         {/* Menu Sections */}
         <MenuSection
-          title="Káva & Nápoje"
+          title="Káva k raňajkám"
           icon={Coffee}
-          description="Specialty kávy pripravené s láskou"
+          description="Káva a nápoje, ktoré si najlepšie vychutnáte s raňajkami"
           items={coffeeMenu}
         />
 

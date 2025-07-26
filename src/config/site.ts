@@ -53,6 +53,14 @@ export const siteConfig = {
     ],
   },
 
+  // Business Information
+  business: {
+    ico: "12345678", // Company registration number - to be updated with real number
+    dic: "SK1234567890", // Tax identification number - to be updated with real number
+    license: "Restaurant license number", // to be updated with real license
+    registeredAddress: "Letná 54/47, 052 01 Spišská Nová Ves, Slovakia",
+  },
+
   // Footer
   footer: {
     copyright: "© 2024 AMC Breakky. Všetky práva vyhradené.",

@@ -24,13 +24,20 @@ export function Header() {
   const isHomePage = location.pathname === "/";
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  // Enhanced smooth scroll with animation for 'visit' section
   const scrollToSection = (sectionId: string) => {
     setMobileMenuOpen(false);
     if (!isHomePage) {
       window.location.href = `/#${sectionId}`;
     } else {
       const element = document.getElementById(sectionId);
-      element?.scrollIntoView({ behavior: "smooth" });
+      if (element) {
+        // Add a small delay for visual feedback
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 120);
+        // Optionally, you could add a highlight effect here
+      }
     }
   };
 
